@@ -14,7 +14,7 @@ Renan.
 Clone this repository and install the requirements:
 
 ```sh
-git clone 
+git clone https://github.com/renan-dias/PyImageRecognition.git
 ```
 
 Move to directory and run the program:
