@@ -1,0 +1,25 @@
+import cv2
+import tensorflow as tf
+
+CATEGORIES = ["dog", "cat", "panda"]
+
+def prepare(filepath):
+    IMG_SIZE = 70  # 50 in txt-based
+    img_array = cv2.imread(filepath, cv2.IMREAD_GRAYSCALE)
+    new_array = cv2.resize(img_array, (IMG_SIZE, IMG_SIZE))
+    return new_array.reshape(-1, IMG_SIZE, IMG_SIZE, 1)
+
+model = tf.keras.models.load_model("64x3-CNN.model")
+
+cap = cv2.VideoCapture(0)
+
+while True:
+    ret, frame = cap.read()
+    gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+
+    cv2.imshow('frame', gray)
+    if cv2.waitKey(1) & 0xFF == ord('q'):
+        break
+
+cap.release()
+cv2.destroyAllWindows()
