@@ -5,9 +5,6 @@
 Hi!
 I developed this project to learn and test some things in python, mainly the graphical interfaces and openCV, I intend to one day update it to some other cool functions involving controlling the movement of a tripod automatically.
 I accept any suggestion on how to improve my code.
-Grateful,
-Renan.
-
 
 ## Installation
 
